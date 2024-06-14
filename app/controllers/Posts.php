@@ -97,7 +97,7 @@ class Posts extends controller
                 // validated
                 if ($this->postModel->updatePost($data)) {
                     flash('post_message', 'پست مورد نظر بروزرسانی شد');
-                    redirect('posts/add');
+                    redirect('posts');
 
                 } else {
                     die('ظاهرا مشکلی پیش آمده');
@@ -132,5 +132,26 @@ class Posts extends controller
             'user' => $user
         ];
         $this->view('posts/single', $data);
+    }
+
+    public function delete($id)
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if ($this->postModel->deletePost($id)) {
+                flash('post_message', 'پست موردنظر حذف شد.');
+                redirect('posts');
+            } else {
+                die('ظاهرا مشکلی پیش اومده');
+            }
+        } else {
+            $post = $this->postModel->getPostById($id);
+            $user = $this->userModel->getUserById($post->userid);
+            $data = [
+                'id' => $id,
+                'post' => $post,
+                'user' => $user
+            ];
+            $this->view('posts/delete', $data);
+        }
     }
 }

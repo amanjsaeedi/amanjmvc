@@ -9,7 +9,7 @@
             <?php echo $data['post']->date ?> ساعت <?php echo $data['post']->time; ?>
         </div>
         <h3 class="mb-2">ویرایش پست</h3>
-        <form action="<?php echo URLROOT; ?>/posts/edit/<?php echo $data['id']; ?>" method="post">
+        <form action="<?php echo URLROOT; ?>/posts/delete/<?php echo $data['id']; ?>" method="post">
             <div class="form-floating mb-2">
                 <input type="text" class="form-control " placeholder="عنوان..." id="title" name="title"
                     value="<?php echo $data['post']->title; ?>" />
@@ -22,7 +22,7 @@
                 <label for="descriptionLabel">توضیحات</label>
             </div>
             <div class="mb-2">
-                <button type="submit" class="btn btn-warning w-100 d-block">بروزرسانی</button>
+                <button type="submit" class="btn btn-danger w-100 d-block">حذف</button>
             </div>
 
 

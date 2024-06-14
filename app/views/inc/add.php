@@ -2,7 +2,7 @@
     <?php flash('post_message'); ?>
     <div class="my-2 p-4 bg-white shadow-sm">
         <div class="mb-3">
-            <a class="btn btn-danger" href="<?php echo URLROOT; ?>/posts/index">بازگشت</a>
+            <a class="btn btn-light" href="<?php echo URLROOT; ?>/posts/index">بازگشت</a>
         </div>
         <h3 class="mb-2">اضافه کردن پست جدید</h3>
         <form action="<?php echo URLROOT; ?>/posts/add" method="post">

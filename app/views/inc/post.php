@@ -17,7 +17,8 @@
                         <li><a class="dropdown-item"
                                 href="<?php echo URLROOT; ?>/posts/edit/<?php echo $posts->postId; ?>">ویرایش</a></li>
                         <li>
-                            <a class="dropdown-item text-danger" href="#">حذف</a>
+                            <a class="dropdown-item text-danger"
+                                href="<?php echo URLROOT; ?>/posts/delete/<?php echo $posts->postId; ?>">حذف</a>
                         </li>
                     </ul>
                 </span>
